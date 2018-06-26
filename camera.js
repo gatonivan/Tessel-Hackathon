@@ -28,7 +28,7 @@ var capture = camera.capture()
     
     
 ambient.on('ready', function () {
-ambient.setSoundTrigger(0.5);
+ambient.setSoundTrigger(0.4);
 
 ambient.on('sound-trigger', function(){
       console.log("Took Pic!")

@@ -18,25 +18,27 @@ var ambientlib = require('ambient-attx4');
 var ambient = ambientlib.use(tessel.port['B']);
 
 var capture = camera.capture()
-// ambient.on('ready', function () {
-    //     ambient.setSoundTrigger(.3)
-    //      ambient.on('sound-trigger', function(){
-        //         pic = camera.capture()
-        //         console.log("took pic")
-        //     })
-        // });
+//     ambient.setSoundTrigger(.3)
+//      ambient.on('sound-trigger', function(){
+    //         pic = camera.capture()
+    //         console.log("took pic")
+    //     })
+    // });
+    
+    
+    
+ambient.on('ready', function () {
+ambient.setSoundTrigger(0.5);
 
-
-
-ambient.setSoundTrigger(0.3);
-
-  ambient.on('sound-trigger', function(){
+ambient.on('sound-trigger', function(){
       console.log("Took Pic!")
         capture = camera.capture(2000, 'jpg')
   });
 
 ambient.on('error', function (err) {
     console.log(err);
+
+});
 });
 
 app.get('/', (req, res) => {
